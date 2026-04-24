@@ -1,24 +1,22 @@
+---
+layout: default
+---
+
 <nav class="top-menu">
-  <a href="#">Inicio</a>
+  <a href="{{ site.baseurl }}/">Inicio</a>
   <a href="#astrofisica">Astrofísica</a>
-  <a href="#exploracion">Exploración Espacial</a>
-  <a href="#energia">Energía Nuclear</a>
+  <a href="#exploracion">Exploración</a>
+  <a href="#energia">Energía</a>
 </nav>
+
 # Bienvenidos al Cosmos
 
 <div class="grid-container">
-  <div class="card">
-    <h3>Astrofísica Pura</h3>
-    <p>Investigación sobre <b>Esferas de Dyson</b> y la manipulación del tiempo con cristales cuánticos.</p>
-  </div>
-
-  <div class="card">
-    <h3>Exploración Espacial</h3>
-    <p>El viaje eterno de la <b>Voyager</b> y los planes para la próxima generación de estaciones espaciales.</p>
-  </div>
-
-  <div class="card">
-    <h3>Física y Energía</h3>
-    <p>Análisis técnico del <b>Plutonio</b> y el potencial disruptivo de la energía nuclear moderna.</p>
-  </div>
+  {% for post in site.posts %}
+    <div class="card">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      <a href="{{ post.url | relative_url }}" class="btn-leer">Leer investigación →</a>
+    </div>
+  {% endfor %}
 </div>
