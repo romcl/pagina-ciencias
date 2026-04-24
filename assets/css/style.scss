@@ -54,3 +54,41 @@
   margin-top: 0;
   color: #155799;
 }
+/* =========================================
+   MENÚ DE NAVEGACIÓN SUPERIOR FIJO
+   ========================================= */
+.top-menu {
+  position: fixed; /* Lo deja anclado arriba al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(11, 12, 16, 0.7); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(10px); /* El efecto cristal sobre la nebulosa */
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Separación entre los botones */
+  padding: 15px 0;
+  z-index: 1000; /* Asegura que el menú esté por encima de todo */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+.top-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima */
+.top-menu a:hover {
+  color: #45a29e; /* Un tono cyan tecnológico */
+  transform: translateY(-2px);
+}
+
+/* Empujamos la cabecera un poco hacia abajo para que el menú no la tape */
+.page-header {
+  padding-top: 120px !important;
+}
