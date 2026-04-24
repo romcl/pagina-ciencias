@@ -1,0 +1,30 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Personalización de la cabecera (Fondo de Nebulosa) */
+.page-header {
+  background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2048&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-color: #0b0c10; /* Color oscuro de respaldo */
+  color: #ffffff;
+  /* Capa oscura transparente para que el texto blanco resalte */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+/* Mejora del Título Principal */
+.project-name {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Mejora de la Descripción */
+.project-tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+}
