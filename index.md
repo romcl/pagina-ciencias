@@ -1,3 +1,9 @@
+<nav class="top-menu">
+  <a href="#">Inicio</a>
+  <a href="#astrofisica">Astrofísica</a>
+  <a href="#exploracion">Exploración Espacial</a>
+  <a href="#energia">Energía Nuclear</a>
+</nav>
 # Bienvenidos al Cosmos
 
 <div class="grid-container">
