@@ -1,10 +1,18 @@
 # Bienvenidos al Cosmos
 
-Esta es la nueva base de operaciones para explorar los misterios del universo y los avances tecnológicos, impulsada por Jekyll.
+<div class="grid-container">
+  <div class="card">
+    <h3>Astrofísica Pura</h3>
+    <p>Investigación sobre <b>Esferas de Dyson</b> y la manipulación del tiempo con cristales cuánticos.</p>
+  </div>
 
-## En investigación actual:
-* **Astrofísica pura:** El funcionamiento de las Esferas de Dyson y los cristales de tiempo.
-* **Exploración espacial:** El legado de la misión Voyager y el futuro de la Estación Espacial Internacional.
-* **Física y Energía:** Los usos reales del plutonio y el futuro de la energía nuclear.
+  <div class="card">
+    <h3>Exploración Espacial</h3>
+    <p>El viaje eterno de la <b>Voyager</b> y los planes para la próxima generación de estaciones espaciales.</p>
+  </div>
 
-Pronto publicaré los primeros análisis completos. ¡Mantente atento!
+  <div class="card">
+    <h3>Física y Energía</h3>
+    <p>Análisis técnico del <b>Plutonio</b> y el potencial disruptivo de la energía nuclear moderna.</p>
+  </div>
+</div>
