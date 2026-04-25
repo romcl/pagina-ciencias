@@ -3,10 +3,21 @@
 @import "{{ site.theme }}";
 
 /* =========================================
-   1. CABECERA Y FONDO DE NEBULOSA
+   1. UNIFICACIÓN Y MODO OSCURO (NUEVO)
    ========================================= */
+body {
+  background-color: #0b0c10; /* Fondo gris muy oscuro, casi negro */
+  color: #c5c6c7; /* Texto claro */
+}
+
+/* Evitar márgenes en el cuerpo y asegurar que el menú ocupe todo el ancho */
+body, .page-content {
+  margin: 0;
+  padding: 0;
+}
+
 /* =========================================
-   1. CABECERA Y FONDO DE NEBULOSA
+   2. CABECERA Y FONDO DE NEBULOSA
    ========================================= */
 .page-header {
   background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2048&auto=format&fit=crop');
@@ -15,43 +26,44 @@
   background-color: #0b0c10;
   color: #ffffff;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
-  padding-top: 130px !important; 
-  padding-bottom: 60px !important;
+  /* Ajuste de márgenes y padding para Modo Oscuro */
+  padding-top: clamp(100px, 15vw, 150px) !important;
+  padding-bottom: clamp(40px, 8vw, 80px) !important;
+  margin: 0; /* Sin margen externo */
 }
 
 .project-name {
-  /* clamp(Mínimo en móviles, Tamaño dinámico, Máximo en PC) */
-  font-size: clamp(2rem, 6vw, 3.5rem); 
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.2; /* Evita que las líneas choquen si el título baja al segundo renglón */
+  line-height: 1.1;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
   margin-bottom: 15px;
-  padding: 0 15px; /* Margen de seguridad lateral para celulares */
+  padding: 0 15px;
 }
 
 .project-tagline {
   font-size: clamp(1rem, 3vw, 1.3rem);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.4;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
   padding: 0 15px;
 }
 
 /* =========================================
-   2. MENÚ DE NAVEGACIÓN SUPERIOR FIJO
+   3. MENÚ DE NAVEGACIÓN SUPERIOR FIJO
    ========================================= */
 .top-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(11, 12, 16, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(11, 12, 16, 0.85); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto cristal */
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: clamp(10px, 3vw, 40px); /* Separación responsiva */
   padding: 15px 0;
   z-index: 1000;
   box-shadow: 0 2px 15px rgba(0,0,0,0.5);
@@ -61,37 +73,37 @@
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .top-menu a:hover {
-  color: #45a29e;
+  color: #45a29e; /* Cyan tecnológico */
   transform: translateY(-2px);
 }
 
 /* =========================================
-   3. CUADRÍCULA DE ARTÍCULOS AUTOMÁTICA
+   4. CUADRÍCULA DE ARTÍCULOS AUTOMÁTICA
    ========================================= */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 50px;
-  padding-bottom: 50px;
+  padding: 0 clamp(15px, 5vw, 50px) 50px;
 }
 
 /* =========================================
-   4. DISEÑO DE LAS TARJETAS (CON IMÁGENES)
+   5. DISEÑO DE LAS TARJETAS (NUEVO ESTILO OSCURO)
    ========================================= */
 .card {
-  background: #ffffff;
+  background: #1f2833; /* Fondo gris azulado oscuro */
   border-radius: 12px;
-  overflow: hidden; /* Esto asegura que la imagen no se salga de las esquinas redondeadas */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border-left: 6px solid #155799;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid #45a29e; /* Borde cyan sutil */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
@@ -99,14 +111,14 @@
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(69, 162, 158, 0.2); /* Resplandor cyan al hover */
 }
 
 .card-img {
   width: 100%;
-  height: 180px;
-  object-fit: cover; /* Recorta la imagen para que siempre encaje perfecto */
-  border-bottom: 1px solid #eee;
+  height: clamp(120px, 25vw, 180px);
+  object-fit: cover;
+  border-bottom: 1px solid rgba(69, 162, 158, 0.1);
 }
 
 .card-content {
@@ -119,14 +131,14 @@
 
 .card-content h3 {
   margin-top: 0;
-  color: #1c1e21;
+  color: #ffffff; /* Título claro */
   font-size: 1.3rem;
   line-height: 1.3;
   margin-bottom: 10px;
 }
 
 .card-content p {
-  color: #555;
+  color: #c5c6c7; /* Texto claro */
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -135,47 +147,65 @@
 .btn-leer {
   align-self: flex-start;
   padding: 10px 20px;
-  background-color: #155799;
-  color: #ffffff !important;
+  background-color: #45a29e; /* Fondo cyan */
+  color: #0b0c10 !important; /* Texto oscuro para contraste */
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.85rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-leer:hover {
-  background-color: #45a29e;
+  background-color: #ffffff;
+  color: #0b0c10 !important;
 }
+
 /* =========================================
-   5. DISEÑO INTERIOR DE LOS ARTÍCULOS
+   6. DISEÑO INTERIOR DE LOS ARTÍCULOS (NUEVO MODO OSCURO)
    ========================================= */
+.post-content {
+  max-width: clamp(300px, 70vw, 750px);
+  margin: 0 auto;
+  padding: 0 clamp(15px, 5vw, 30px) 50px;
+  color: #c5c6c7;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  color: #ffffff; /* Encabezados claros */
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 .btn-volver {
   display: inline-block;
+  margin-top: 20px;
   margin-bottom: 30px;
+  margin-left: clamp(15px, 5vw, 30px);
   padding: 10px 20px;
-  background-color: rgba(21, 87, 153, 0.1);
-  color: #155799;
+  background-color: rgba(69, 162, 158, 0.1); /* Fondo sutil cyan */
+  color: #45a29e;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
-  border: 1px solid #155799;
+  border: 1px solid #45a29e;
   transition: all 0.3s ease;
 }
 
 .btn-volver:hover {
-  background-color: #155799;
-  color: #ffffff;
-  transform: translateX(-5px); /* Efecto de flecha hacia la izquierda */
+  background-color: #45a29e;
+  color: #0b0c10 !important;
+  transform: translateX(-5px);
 }
 
 .post-main-img {
   width: 100%;
-  max-height: 400px;
+  max-height: clamp(200px, 40vw, 400px);
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 40px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(69, 162, 158, 0.1);
 }
 
 /* Para que cualquier imagen extra que pongas en el texto se vea bien */
@@ -184,4 +214,5 @@
   border-radius: 8px;
   margin: 30px 0;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(69, 162, 158, 0.05);
 }
