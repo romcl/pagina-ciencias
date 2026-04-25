@@ -3,6 +3,7 @@ layout: default
 title: "Cristales de Tiempo: La materia que desafía la termodinámica"
 date: 2026-04-24
 categories: astrofisica
+image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop"
 ---
 
 # Cristales de Tiempo: La materia que desafía la termodinámica
