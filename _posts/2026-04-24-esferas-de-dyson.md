@@ -3,7 +3,7 @@ layout: post
 title: "Esferas de Dyson: ¿Podemos atrapar la energía de una estrella?"
 date: 2026-04-24
 categories: astrofisica
-image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800&auto=format&fit=crop"
+image: "https://cdn.discordapp.com/attachments/1479004312893132810/1497418124784435281/image.png?ex=69ed72cd&is=69ec214d&hm=aa09f7a5916f5d22d389298297857691dd79139078d100cfc08241c8c4e43e45&"
 ---
 
 # Esferas de Dyson: ¿Podemos atrapar la energía de una estrella?
