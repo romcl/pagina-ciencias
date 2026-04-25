@@ -12,7 +12,7 @@
   background-color: #0b0c10;
   color: #ffffff;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
-  padding-top: 120px !important; /* Espacio para que el menú no tape el título */
+  padding-top: 120px !important;
 }
 
 .project-name {
@@ -73,16 +73,18 @@
   padding-bottom: 50px;
 }
 
+/* =========================================
+   4. DISEÑO DE LAS TARJETAS (CON IMÁGENES)
+   ========================================= */
 .card {
   background: #ffffff;
   border-radius: 12px;
-  padding: 30px;
+  overflow: hidden; /* Esto asegura que la imagen no se salga de las esquinas redondeadas */
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   border-left: 6px solid #155799;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .card:hover {
@@ -90,22 +92,38 @@
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #1c1e21;
-  font-size: 1.4rem;
-  line-height: 1.3;
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Recorta la imagen para que siempre encaje perfecto */
+  border-bottom: 1px solid #eee;
 }
 
-.card p {
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  color: #1c1e21;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.card-content p {
   color: #555;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .btn-leer {
   align-self: flex-start;
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #155799;
   color: #ffffff !important;
