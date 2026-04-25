@@ -65,3 +65,19 @@ layout: default
     });
   });
 </script>
+<footer class="custom-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EXPLORACIÓN Y CIENCIA</h3>
+      <p>Divulgación científica desde Caldera, Región de Atacama.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://instagram.com/jamsroam" target="_blank" class="social-link">Instagram</a>
+      <a href="https://youtube.com/" target="_blank" class="social-link">YouTube</a>
+      <a href="https://tiktok.com/" target="_blank" class="social-link">TikTok</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Raúl Araya Morales. Todos los derechos reservados. Transmisión segura.</p>
+  </div>
+</footer>
