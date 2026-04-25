@@ -3,24 +3,25 @@
 @import "{{ site.theme }}";
 
 /* =========================================
-   1. UNIFICACIÓN Y MODO OSCURO (NUEVO)
+   1. UNIFICACIÓN Y MODO OSCURO
    ========================================= */
 body {
-  background-color: #0b0c10; /* Fondo gris muy oscuro, casi negro */
-  color: #c5c6c7; /* Texto claro */
+  background-color: #0b0c10;
+  color: #c5c6c7;
 }
 
-/* Evitar márgenes en el cuerpo y asegurar que el menú ocupe todo el ancho */
 body, .page-content {
   margin: 0;
   padding: 0;
 }
-/* Ocultar los botones por defecto de GitHub en la cabecera */
+
+/* Ocultar botón de github por defecto */
 .page-header .btn {
   display: none !important;
 }
+
 /* =========================================
-   2. CABECERA Y FONDO DE NEBULOSA
+   2. CABECERA Y NEBULOSA
    ========================================= */
 .page-header {
   background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2048&auto=format&fit=crop');
@@ -29,10 +30,9 @@ body, .page-content {
   background-color: #0b0c10;
   color: #ffffff;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
-  /* Ajuste de márgenes y padding para Modo Oscuro */
   padding-top: clamp(100px, 15vw, 150px) !important;
   padding-bottom: clamp(40px, 8vw, 80px) !important;
-  margin: 0; /* Sin margen externo */
+  margin: 0;
 }
 
 .project-name {
@@ -55,18 +55,18 @@ body, .page-content {
 }
 
 /* =========================================
-   3. MENÚ DE NAVEGACIÓN SUPERIOR FIJO
+   3. MENÚ SUPERIOR
    ========================================= */
 .top-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(11, 12, 16, 0.85); /* Fondo oscuro semi-transparente */
-  backdrop-filter: blur(10px); /* Efecto cristal */
+  background: rgba(11, 12, 16, 0.85);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
-  gap: clamp(10px, 3vw, 40px); /* Separación responsiva */
+  gap: clamp(10px, 3vw, 40px);
   padding: 15px 0;
   z-index: 1000;
   box-shadow: 0 2px 15px rgba(0,0,0,0.5);
@@ -83,15 +83,23 @@ body, .page-content {
 }
 
 .top-menu a:hover {
-  color: #45a29e; /* Cyan tecnológico */
+  color: #45a29e;
   transform: translateY(-2px);
 }
 
 /* =========================================
-   4. ARQUITECTURA BENTO Y HERO (NUEVO DISEÑO)
+   4. ESTRUCTURA HERO (DESTACADO)
    ========================================= */
+.section-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 60px 0 30px;
+  font-weight: 800;
+}
 
-/* HERO SECTION (El artículo principal) */
 .hero-section {
   max-width: 1100px;
   margin: 0 auto 40px;
@@ -106,7 +114,6 @@ body, .page-content {
   overflow: hidden;
   border: 1px solid rgba(69, 162, 158, 0.4);
   box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 20px rgba(69, 162, 158, 0.1);
-  transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -176,144 +183,286 @@ body, .page-content {
   line-height: 1.6;
 }
 
-/* BENTO GRID (El archivo histórico secundario) */
+.btn-leer {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: #45a29e;
+  color: #0b0c10 !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-leer:hover {
+  background-color: #ffffff;
+  color: #0b0c10 !important;
+}
+
+/* =========================================
+   5. BENTO GRID (ULTRA COMPACTO)
+   ========================================= */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
   max-width: 1100px;
-  margin: 0 auto 80px;
+  margin: 0 auto 50px;
   padding: 0 20px;
 }
 
 .bento-card {
-  background: rgba(17, 24, 39, 0.8);
-  border: 1px solid rgba(69, 162, 158, 0.15);
-  border-radius: 12px;
+  background: #151b22;
+  border: 1px solid rgba(69, 162, 158, 0.2);
+  border-radius: 8px;
   overflow: hidden;
+  text-decoration: none;
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
 }
 
 .bento-card:hover {
   border-color: #66fcf1;
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(69, 162, 158, 0.15);
+  transform: scale(1.02);
 }
 
 .bento-img {
   width: 100%;
-  height: 150px;
+  height: 120px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(69, 162, 158, 0.1);
-  filter: grayscale(40%) brightness(0.8); /* Look más técnico */
-  transition: filter 0.3s ease;
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
 .bento-card:hover .bento-img {
-  filter: grayscale(0%) brightness(1);
+  opacity: 1;
 }
 
 .bento-content {
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
+  padding: 12px;
 }
 
 .bento-content h3 {
-  font-size: 1.1rem;
-  color: #e2e8f0;
-  margin: 0 0 20px;
-  line-height: 1.4;
-  font-weight: 600;
+  font-size: 0.85rem;
+  color: #c5c6c7;
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 500;
 }
 
-.btn-small {
-  padding: 8px 16px;
-  font-size: 0.8rem;
-  align-self: flex-start;
-  background: transparent;
+/* =========================================
+   6. RADAR DE TELEMETRÍA (COMPACTO)
+   ========================================= */
+.terminal-wrapper {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  background: rgba(11, 12, 16, 0.9);
   border: 1px solid rgba(69, 162, 158, 0.5);
-  color: #66fcf1 !important;
-  font-family: 'Courier New', monospace;
-  letter-spacing: 1px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(69, 162, 158, 0.1);
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+  overflow: hidden;
 }
 
-.btn-small:hover {
+.terminal-header {
+  background: rgba(69, 162, 158, 0.15);
+  border-bottom: 1px solid rgba(69, 162, 158, 0.5);
+  padding: 10px 15px;
+  color: #66fcf1;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radar-layout {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+.radar-controls {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radar-controls h4, .radar-data h4 {
+  color: #c5c6c7;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.target-btn {
+  background: transparent;
+  border: 1px solid rgba(69, 162, 158, 0.3);
+  color: #c5c6c7;
+  padding: 8px 12px;
+  text-align: left;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.target-btn:hover {
   background: rgba(69, 162, 158, 0.1);
   border-color: #66fcf1;
-}
-/* =========================================
-   6. DISEÑO INTERIOR DE LOS ARTÍCULOS (NUEVO MODO OSCURO)
-   ========================================= */
-.post-content {
-  max-width: clamp(300px, 70vw, 750px);
-  margin: 0 auto;
-  padding: 0 clamp(15px, 5vw, 30px) 50px;
-  color: #c5c6c7;
+  transform: translateX(3px);
 }
 
-.post-content h1, .post-content h2, .post-content h3 {
-  color: #ffffff; /* Encabezados claros */
-  margin-top: 40px;
-  margin-bottom: 20px;
+.target-btn.active {
+  background: rgba(69, 162, 158, 0.2);
+  color: #66fcf1;
+  border-color: #66fcf1;
+  box-shadow: inset 3px 0 0 #66fcf1;
 }
 
-.btn-volver {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  margin-left: clamp(15px, 5vw, 30px);
-  padding: 10px 20px;
-  background-color: rgba(69, 162, 158, 0.1); /* Fondo sutil cyan */
-  color: #45a29e;
-  text-decoration: none;
+.radar-display {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radar-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid rgba(69, 162, 158, 0.3);
+  background: 
+    repeating-radial-gradient(transparent, transparent 20px, rgba(69, 162, 158, 0.1) 21px, transparent 22px),
+    linear-gradient(rgba(69, 162, 158, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 162, 158, 0.2) 1px, transparent 1px);
+  background-size: 100% 100%, 50% 50%, 50% 50%;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(69, 162, 158, 0.2);
+}
+
+.earth-center {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px #fff, 0 0 15px #66fcf1;
+  z-index: 2;
+}
+
+.radar-sweep {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: conic-gradient(from 0deg, transparent 70%, rgba(102, 252, 241, 0.1) 90%, rgba(102, 252, 241, 0.6) 100%);
+  animation: radar-spin 4s linear infinite;
+}
+
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.radar-data {
+  flex: 1.5;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
   border-radius: 6px;
-  font-weight: 600;
-  border: 1px solid #45a29e;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  font-family: 'Courier New', monospace;
+  height: 100%;
 }
 
-.btn-volver:hover {
-  background-color: #45a29e;
-  color: #0b0c10 !important;
-  transform: translateX(-5px);
+.data-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.post-main-img {
-  width: 100%;
-  max-height: clamp(200px, 40vw, 400px);
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 1px solid rgba(69, 162, 158, 0.1);
+.data-label {
+  font-size: 0.7rem;
+  color: #8892b0;
+  margin-bottom: 2px;
 }
 
-/* Para que cualquier imagen extra que pongas en el texto se vea bien */
-.post-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  border: 1px solid rgba(69, 162, 158, 0.05);
+.data-value {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: bold;
 }
+
+.data-value.highlight {
+  color: #66fcf1 !important;
+  font-size: 1.2rem !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.text-cyan {
+  color: #45a29e;
+  font-size: 0.8rem;
+}
+
+.mt-auto {
+  margin-top: auto;
+  border-top: 1px dashed rgba(69, 162, 158, 0.3);
+  padding-top: 10px;
+}
+
+.pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #66fcf1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #66fcf1;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
 /* =========================================
-   8. PIE DE PÁGINA (FOOTER)
+   7. FOOTER Y ESTILOS INTERIORES
    ========================================= */
-
-/* Ocultar el pie de página genérico de GitHub Pages */
 .site-footer {
   display: none !important;
 }
 
 .custom-footer {
-  background: #08090a; /* Un tono aún más oscuro para el fondo final */
-  border-top: 1px solid rgba(69, 162, 158, 0.2); /* Línea cyan superior */
+  background: #08090a;
+  border-top: 1px solid rgba(69, 162, 158, 0.2);
   padding: 50px 20px 20px;
   margin-top: 80px;
   color: #c5c6c7;
@@ -356,7 +505,7 @@ body, .page-content {
   font-size: 0.9rem;
   border: 1px solid #45a29e;
   padding: 8px 20px;
-  border-radius: 25px; /* Botones redondeados */
+  border-radius: 25px;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -378,258 +527,83 @@ body, .page-content {
   color: #555;
   font-family: monospace;
 }
-/* =========================================
-   9. TERMINAL DE RADAR CÓSMICO (COMPACTA)
-   ========================================= */
 
-.terminal-wrapper {
-  max-width: 850px; /* Reducido de 1100px para que sea más portátil */
-  margin: 0 auto 60px; /* Ya no tiene margen negativo, se ubica normalmente */
-  background: rgba(11, 12, 16, 0.9);
-  border: 1px solid rgba(69, 162, 158, 0.5);
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(69, 162, 158, 0.1);
-  position: relative;
-  z-index: 10;
-  backdrop-filter: blur(15px);
-  overflow: hidden;
-}
-
-.terminal-header {
-  background: rgba(69, 162, 158, 0.15);
-  border-bottom: 1px solid rgba(69, 162, 158, 0.5);
-  padding: 10px 15px;
-  color: #66fcf1;
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.radar-layout {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px; /* Menos espacio interior */
-  gap: 20px;
-  align-items: center;
-}
-
-/* Panel Izquierdo: Botones */
-.radar-controls {
-  flex: 1;
-  min-width: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.radar-controls h4, .radar-data h4 {
+/* Interior de Artículos */
+.post-content {
+  max-width: clamp(300px, 70vw, 750px);
+  margin: 0 auto;
+  padding: 0 clamp(15px, 5vw, 30px) 50px;
   color: #c5c6c7;
-  letter-spacing: 1px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 5px;
-  font-size: 0.9rem;
 }
 
-.target-btn {
-  background: transparent;
-  border: 1px solid rgba(69, 162, 158, 0.3);
-  color: #c5c6c7;
-  padding: 8px 12px; /* Botones más chicos */
-  text-align: left;
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 4px;
-}
-
-.target-btn:hover {
-  background: rgba(69, 162, 158, 0.1);
-  border-color: #66fcf1;
-  transform: translateX(3px);
-}
-
-.target-btn.active {
-  background: rgba(69, 162, 158, 0.2);
-  color: #66fcf1;
-  border-color: #66fcf1;
-  box-shadow: inset 3px 0 0 #66fcf1;
-}
-
-/* Panel Central: El Radar */
-.radar-display {
-  flex: 1;
-  min-width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radar-circle {
-  width: 180px; /* Reducido de 280px */
-  height: 180px;
-  border-radius: 50%;
-  border: 2px solid rgba(69, 162, 158, 0.3);
-  background: 
-    repeating-radial-gradient(
-      transparent,
-      transparent 20px,
-      rgba(69, 162, 158, 0.1) 21px,
-      transparent 22px
-    ),
-    linear-gradient(rgba(69, 162, 158, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(69, 162, 158, 0.2) 1px, transparent 1px);
-  background-size: 100% 100%, 50% 50%, 50% 50%;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(69, 162, 158, 0.2);
-}
-
-.earth-center {
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 8px #fff, 0 0 15px #66fcf1;
-  z-index: 2;
-}
-
-.radar-sweep {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: conic-gradient(from 0deg, transparent 70%, rgba(102, 252, 241, 0.1) 90%, rgba(102, 252, 241, 0.6) 100%);
-  animation: radar-spin 4s linear infinite;
-}
-
-@keyframes radar-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Panel Derecho: Datos */
-.radar-data {
-  flex: 1.5;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Textos más juntos */
-  background: rgba(0,0,0,0.3);
-  padding: 15px;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.05);
-  font-family: 'Courier New', monospace;
-  height: 100%;
-}
-
-.data-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.data-label {
-  font-size: 0.7rem;
-  color: #8892b0;
-  margin-bottom: 2px;
-}
-
-.data-value {
-  font-size: 0.95rem; /* Textos más chicos */
+.post-content h1, .post-content h2, .post-content h3 {
   color: #ffffff;
-  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
-.data-value.highlight {
-  color: #66fcf1 !important;
-  font-size: 1.2rem !important; /* Resalte un poco menor */
-  background: transparent !important;
-  padding: 0 !important;
-  border: none !important;
-}
-
-.text-cyan {
+.btn-volver {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: clamp(15px, 5vw, 30px);
+  padding: 10px 20px;
+  background-color: rgba(69, 162, 158, 0.1);
   color: #45a29e;
-  font-size: 0.8rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #45a29e;
+  transition: all 0.3s ease;
 }
 
-.mt-auto {
-  margin-top: auto;
-  border-top: 1px dashed rgba(69, 162, 158, 0.3);
-  padding-top: 10px;
+.btn-volver:hover {
+  background-color: #45a29e;
+  color: #0b0c10 !important;
+  transform: translateX(-5px);
 }
+
+.post-main-img {
+  width: 100%;
+  max-height: clamp(200px, 40vw, 400px);
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(69, 162, 158, 0.1);
+}
+
+.post-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(69, 162, 158, 0.05);
+}
+
 /* =========================================
-   10. OPTIMIZACIÓN MÓVIL (MEDIA QUERIES)
+   8. OPTIMIZACIÓN MÓVIL EXTREMA
    ========================================= */
-
 @media (max-width: 768px) {
-  .terminal-wrapper {
-    margin: 0 15px 40px; /* Evita que el radar toque los bordes del celular */
-  }
+  .terminal-wrapper { margin: 0 15px 40px; }
+  .radar-layout { flex-direction: column; padding: 15px; gap: 15px; }
+  .radar-controls { flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; }
+  .radar-controls h4 { width: 100%; text-align: center; margin-bottom: 5px; }
+  .target-btn { flex: 1 1 30%; text-align: center; font-size: 0.75rem; padding: 8px 5px; }
+  .radar-circle { width: 130px; height: 130px; }
+  .radar-data { width: 100%; gap: 6px; padding: 12px; }
+  .data-value { font-size: 0.85rem; }
+  .data-value.highlight { font-size: 1.1rem !important; }
+  .section-title { font-size: 1.5rem; margin: 40px 0 20px; }
+}
 
-  .radar-layout {
-    flex-direction: column; /* Apila los paneles verticalmente */
-    padding: 15px;
-    gap: 15px;
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 10px;
   }
-
-  /* Panel de Botones: Convertir a una fila horizontal */
-  .radar-controls {
-    flex-direction: row; 
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .radar-controls h4 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-  .target-btn {
-    flex: 1 1 30%; /* Los botones se acomodan uno al lado del otro */
-    text-align: center;
-    font-size: 0.75rem;
-    padding: 8px 5px;
-  }
-
-  /* Reducir el tamaño del círculo del radar */
-  .radar-circle {
-    width: 130px; 
-    height: 130px;
-  }
-
-  /* Compactar el panel de datos */
-  .radar-data {
-    width: 100%;
-    gap: 6px;
-    padding: 12px;
-  }
-
-  .data-value {
-    font-size: 0.85rem;
-  }
-
-  .data-value.highlight {
-    font-size: 1.1rem !important;
-  }
-  
-  .section-title {
-    font-size: 1.5rem; /* Achicar títulos principales en móvil */
-    margin: 40px 0 20px;
-  }
+  .bento-img { height: 90px; }
+  .bento-content h3 { font-size: 0.75rem; }
+  .hero-content h2 { font-size: 1.4rem; }
 }
