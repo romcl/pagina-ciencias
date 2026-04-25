@@ -3,7 +3,7 @@ layout: post
 title: "Motor de Alcubierre: ¿Es posible viajar más rápido que la luz?"
 date: 2026-04-24
 categories: exploracion
-image: "https://images.unsplash.com/photo-1614732414444-098e5f11151a?q=80&w=1000&auto=format&fit=crop"
+image: "https://cdn.discordapp.com/attachments/1479004312893132810/1497411415579955393/sddefault.png?ex=69ed6c8e&is=69ec1b0e&hm=43e65a726c4146cc148b4b6a758cc65014719a377d815e90c589e48ab1086250&"
 ---
 
 # Motor de Alcubierre: ¿Es posible viajar más rápido que la luz?
