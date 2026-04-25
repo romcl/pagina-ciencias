@@ -470,12 +470,13 @@ body, .page-content {
   color: #ffffff;
   font-weight: bold;
 }
-
 .data-value.highlight {
-  color: #66fcf1;
+  color: #66fcf1 !important;
   font-size: 1.4rem;
+  background: transparent !important; /* Fuerza a quitar el fondo blanco */
+  padding: 0 !important; /* Quita el espacio extra que metía el tema */
+  border: none !important;
 }
-
 .text-cyan {
   color: #45a29e;
   font-size: 0.9rem;
