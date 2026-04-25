@@ -219,3 +219,79 @@ body, .page-content {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   border: 1px solid rgba(69, 162, 158, 0.05);
 }
+/* =========================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================= */
+
+/* Ocultar el pie de página genérico de GitHub Pages */
+.site-footer {
+  display: none !important;
+}
+
+.custom-footer {
+  background: #08090a; /* Un tono aún más oscuro para el fondo final */
+  border-top: 1px solid rgba(69, 162, 158, 0.2); /* Línea cyan superior */
+  padding: 50px 20px 20px;
+  margin-top: 80px;
+  color: #c5c6c7;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-logo h3 {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.footer-logo p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #8892b0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  color: #45a29e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid #45a29e;
+  padding: 8px 20px;
+  border-radius: 25px; /* Botones redondeados */
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-link:hover {
+  background: #45a29e;
+  color: #0b0c10 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(69, 162, 158, 0.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.85rem;
+  color: #555;
+  font-family: monospace;
+}
