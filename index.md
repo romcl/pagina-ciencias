@@ -28,7 +28,7 @@ layout: default
 <h2 class="section-title">Herramienta de Exploración</h2>
 <div class="terminal-wrapper">
   <div class="terminal-header">
-    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: CALDERA, ATACAMA)
+    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: PLANETA TIERRA)
   </div>
   <div class="radar-layout">
     <div class="radar-controls">
@@ -78,13 +78,13 @@ layout: default
       <p>Divulgación científica desde Caldera, Región de Atacama.</p>
     </div>
     <div class="footer-social">
-      <a href="https://instagram.com/jamsroam" target="_blank" class="social-link">Instagram</a>
+      <a href="https://instagram.com/" target="_blank" class="social-link">Instagram</a>
       <a href="https://youtube.com/" target="_blank" class="social-link">YouTube</a>
       <a href="https://tiktok.com/" target="_blank" class="social-link">TikTok</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 Raúl Araya Morales. Todos los derechos reservados.</p>
+    <p>&copy; 2026. Todos los derechos reservados.</p>
   </div>
 </footer>
 
