@@ -9,24 +9,39 @@ layout: default
   <a href="#energia" class="filter-btn" data-filter="energia">Energía</a>
 </nav>
 
-<h2 class="section-title" style="margin-top: -30px; position: relative; z-index: 10;">Registros del Horizonte</h2>
+<h2 class="section-title" style="margin-top: -30px; position: relative; z-index: 10;">Archivo Principal</h2>
 
-<div class="grid-container" id="post-grid">
-  {% for post in site.posts %}
-    <div class="card post-card {{ post.categories | join: ' ' }}">
+<div class="hero-section" id="hero-container">
+  {% for post in site.posts limit: 1 %}
+    <div class="hero-card post-item {{ post.categories | join: ' ' }}">
       {% if post.image %}
-        <img src="{{ post.image }}" alt="{{ post.title }}" class="card-img">
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="hero-img">
       {% endif %}
-      <div class="card-content">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al Registro →</a>
+      <div class="hero-content">
+        <span class="badge">ÚLTIMA DESCLASIFICACIÓN</span>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al Registro Completo →</a>
       </div>
     </div>
   {% endfor %}
 </div>
 
-<h2 class="section-title" style="margin-top: 20px;">Herramienta de Exploración</h2>
+<div class="bento-grid" id="bento-container">
+  {% for post in site.posts offset: 1 %}
+    <div class="bento-card post-item {{ post.categories | join: ' ' }}">
+      {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="bento-img">
+      {% endif %}
+      <div class="bento-content">
+        <h3>{{ post.title }}</h3>
+        <a href="{{ post.url | relative_url }}" class="btn-leer btn-small">Analizar Datos →</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<h2 class="section-title" style="margin-top: 40px;">Herramienta de Exploración</h2>
 
 <div class="terminal-wrapper">
   <div class="terminal-header">
@@ -95,22 +110,29 @@ layout: default
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 1. Lógica del Filtro de Artículos
+    // Lógica del Filtro (Ahora aplica a post-item en general)
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.post-card');
+    const items = document.querySelectorAll('.post-item');
+    
     filterBtns.forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault(); 
         filterBtns.forEach(b => b.style.color = '#ffffff');
         this.style.color = '#45a29e'; 
+        
         const filterValue = this.getAttribute('data-filter');
-        cards.forEach(card => {
-          card.style.display = (filterValue === 'all' || card.classList.contains(filterValue)) ? 'flex' : 'none';
+        
+        items.forEach(item => {
+          if (filterValue === 'all' || item.classList.contains(filterValue)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
         });
       });
     });
 
-    // 2. Base de Datos del Radar Cósmico
+    // Base de Datos del Radar Cósmico
     const astroData = {
       luna: { name: "LUNA", dist: 384400, status: "Órbita estable. Anomalías: 0." },
       sol: { name: "SOL", dist: 149600000, status: "Actividad solar moderada." },
@@ -118,7 +140,6 @@ layout: default
       marte: { name: "MARTE", dist: 78300000, status: "Rastreo de rovers activo." },
       jupiter: { name: "JÚPITER", dist: 628700000, status: "Fuerte radiación magnética." }
     };
-
     const speedOfLight = 299792; 
     const probeSpeed = 60000; 
 
