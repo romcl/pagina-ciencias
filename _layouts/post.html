@@ -4,10 +4,10 @@ layout: default
 
 <a href="{{ site.baseurl }}/" class="btn-volver">← Volver a la Base</a>
 
-{% if page.image %}
-  <img src="{{ page.image }}" alt="{{ page.title }}" class="post-main-img">
-{% endif %}
-
 <div class="post-content">
+  {% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.title }}" class="post-main-img">
+  {% endif %}
+
   {{ content }}
 </div>
