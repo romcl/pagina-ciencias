@@ -88,82 +88,165 @@ body, .page-content {
 }
 
 /* =========================================
-   4. CUADRÍCULA DE ARTÍCULOS AUTOMÁTICA
+   4. ARQUITECTURA BENTO Y HERO (NUEVO DISEÑO)
    ========================================= */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 50px;
-  padding: 0 clamp(15px, 5vw, 50px) 50px;
+
+/* HERO SECTION (El artículo principal) */
+.hero-section {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
 }
 
-/* =========================================
-   5. DISEÑO DE LAS TARJETAS (NUEVO ESTILO OSCURO)
-   ========================================= */
-.card {
-  background: #1f2833; /* Fondo gris azulado oscuro */
-  border-radius: 12px;
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  background: #151b22;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 1px solid #45a29e; /* Borde cyan sutil */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  display: flex;
-  flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(69, 162, 158, 0.2); /* Resplandor cyan al hover */
-}
-
-.card-img {
-  width: 100%;
-  height: clamp(120px, 25vw, 180px);
-  object-fit: cover;
-  border-bottom: 1px solid rgba(69, 162, 158, 0.1);
-}
-
-.card-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-}
-
-.card-content h3 {
-  margin-top: 0;
-  color: #ffffff; /* Título claro */
-  font-size: 1.3rem;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-
-.card-content p {
-  color: #c5c6c7; /* Texto claro */
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.btn-leer {
-  align-self: flex-start;
-  padding: 10px 20px;
-  background-color: #45a29e; /* Fondo cyan */
-  color: #0b0c10 !important; /* Texto oscuro para contraste */
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.85rem;
+  border: 1px solid rgba(69, 162, 158, 0.4);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 20px rgba(69, 162, 158, 0.1);
   transition: all 0.3s ease;
 }
 
-.btn-leer:hover {
-  background-color: #ffffff;
-  color: #0b0c10 !important;
+@media (min-width: 768px) {
+  .hero-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 
+.hero-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(69, 162, 158, 0.2);
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    width: 50%;
+    height: auto;
+    min-height: 350px;
+    border-bottom: none;
+    border-right: 1px solid rgba(69, 162, 158, 0.2);
+  }
+}
+
+.hero-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    width: 50%;
+  }
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(102, 252, 241, 0.1);
+  color: #66fcf1;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  align-self: flex-start;
+  border: 1px solid rgba(102, 252, 241, 0.3);
+}
+
+.hero-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #ffffff;
+  margin: 0 0 15px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  color: #a8b2d1;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* BENTO GRID (El archivo histórico secundario) */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.bento-card {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(69, 162, 158, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+.bento-card:hover {
+  border-color: #66fcf1;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(69, 162, 158, 0.15);
+}
+
+.bento-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(69, 162, 158, 0.1);
+  filter: grayscale(40%) brightness(0.8); /* Look más técnico */
+  transition: filter 0.3s ease;
+}
+
+.bento-card:hover .bento-img {
+  filter: grayscale(0%) brightness(1);
+}
+
+.bento-content {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.bento-content h3 {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin: 0 0 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(69, 162, 158, 0.5);
+  color: #66fcf1 !important;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.btn-small:hover {
+  background: rgba(69, 162, 158, 0.1);
+  border-color: #66fcf1;
+}
 /* =========================================
    6. DISEÑO INTERIOR DE LOS ARTÍCULOS (NUEVO MODO OSCURO)
    ========================================= */
