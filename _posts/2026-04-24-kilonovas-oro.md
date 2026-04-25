@@ -16,7 +16,7 @@ Ya sabemos que las estrellas de neutrones son núcleos ultra-densos. Pero, ¿qu�
 
 ## Alquimia Estelar
 
-Durante la colisión, se liberan temperaturas y presiones tan extremas que los neutrones son forzados a unirse a los núcleos atómicos en milisegundos (proceso r). Este es el único momento en el universo donde se forjan elementos pesados como el **oro, el platino y el uranio**. 
+Durante la colisión, se liberan temperaturas y presiones tan extremas que los neutrones son forzados a unirse a los núcleos atómicos en milisegundos. Este es el único momento en el universo donde se forjan elementos pesados como el **oro, el platino y el uranio**. 
 
 Se estima que una sola colisión de estrellas de neutrones puede generar una cantidad de oro equivalente a **varias veces la masa de la Tierra**.
 
@@ -26,9 +26,7 @@ En 2017, la humanidad hizo historia al detectar por primera vez las ondas gravit
 
 ---
 
-### Generador de Elementos Pesados
+### Módulo de Simulación: Forja Atómica
+*Iniciando protocolo de visualización de elementos pesados...*
 
-Para que tus lectores vean la diferencia entre una estrella normal y una Kilonova, he diseñado este **Simulador de Forja Atómica**:
-
-```json?chameleon
-{"component":"LlmGeneratedComponent","props":{"height":"600px","prompt":"Genera un simulador llamado 'Forja de Elementos Pesados' en español. \n\nObjetivo: Comparar qué elementos crea una estrella común vs una Kilonova.\n\nVisualización:\n- Un panel izquierdo 'Estrella Tipo Sol' y un panel derecho 'Colisión Kilonova'.\n- Representaciones de átomos fluyendo.\n\nControles:\n- Un botón de 'Activar Fusión'.\n\nComportamiento:\n- En el panel del Sol, solo se desbloquean elementos ligeros (Helio, Carbono).\n- En el panel de Kilonova, tras una animación de choque brillante, aparecen iconos de Oro (Au) y Platino (Pt) con una alerta: '¡ALQUIMIA CÓSMICA DETECTADA!'.\n- Estética de laboratorio espacial, colores dorados y blancos brillantes sobre fondo oscuro.","id":"im_701eb6bcfbd45134"}}
+> **Nota del Investigador:** Los eventos de Kilonova representan la frontera final de nuestra comprensión sobre la nucleosíntesis. Cada gramo de oro en Atacama es un remanente de este caos gravitatorio.
