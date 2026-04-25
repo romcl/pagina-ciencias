@@ -488,3 +488,65 @@ body, .page-content {
   border-top: 1px dashed rgba(69, 162, 158, 0.3);
   padding-top: 10px;
 }
+/* =========================================
+   10. OPTIMIZACIÓN MÓVIL (MEDIA QUERIES)
+   ========================================= */
+
+@media (max-width: 768px) {
+  .terminal-wrapper {
+    margin: 0 15px 40px; /* Evita que el radar toque los bordes del celular */
+  }
+
+  .radar-layout {
+    flex-direction: column; /* Apila los paneles verticalmente */
+    padding: 15px;
+    gap: 15px;
+  }
+
+  /* Panel de Botones: Convertir a una fila horizontal */
+  .radar-controls {
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .radar-controls h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .target-btn {
+    flex: 1 1 30%; /* Los botones se acomodan uno al lado del otro */
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 8px 5px;
+  }
+
+  /* Reducir el tamaño del círculo del radar */
+  .radar-circle {
+    width: 130px; 
+    height: 130px;
+  }
+
+  /* Compactar el panel de datos */
+  .radar-data {
+    width: 100%;
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .data-value {
+    font-size: 0.85rem;
+  }
+
+  .data-value.highlight {
+    font-size: 1.1rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.5rem; /* Achicar títulos principales en móvil */
+    margin: 40px 0 20px;
+  }
+}
