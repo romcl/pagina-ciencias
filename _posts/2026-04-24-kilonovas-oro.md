@@ -3,7 +3,7 @@ layout: post
 title: "Kilonovas: El horno cósmico donde se forja el oro"
 date: 2026-04-24
 categories: astrofisica
-image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1000&auto=format&fit=crop"
+image: "https://cdn.discordapp.com/attachments/1479004312893132810/1497417891161571328/image.png?ex=69ed7295&is=69ec2115&hm=8e2443dd707d74755dbfe1d5b684964001ded3b660c3474a2e7b7a6f39adb745&"
 ---
 
 # Kilonovas: El horno cósmico donde se forja el oro
