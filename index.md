@@ -9,9 +9,28 @@ layout: default
   <a href="#energia" class="filter-btn" data-filter="energia">Energía</a>
 </nav>
 
+<h2 class="section-title" style="margin-top: -30px; position: relative; z-index: 10;">Registros del Horizonte</h2>
+
+<div class="grid-container" id="post-grid">
+  {% for post in site.posts %}
+    <div class="card post-card {{ post.categories | join: ' ' }}">
+      {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="card-img">
+      {% endif %}
+      <div class="card-content">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al Registro →</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<h2 class="section-title" style="margin-top: 20px;">Herramienta de Exploración</h2>
+
 <div class="terminal-wrapper">
   <div class="terminal-header">
-    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: PLANETA TIERRA)
+    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: CALDERA, ATACAMA)
   </div>
   
   <div class="radar-layout">
@@ -42,36 +61,19 @@ layout: default
         <span class="data-value" id="data-dist">384,400 km</span>
       </div>
       <div class="data-group">
-        <span class="data-label">RETRASO DE COMUNICACIÓN (LUZ):</span>
+        <span class="data-label">RETRASO (LUZ):</span>
         <span class="data-value" id="data-light">1.28 segundos</span>
       </div>
       <div class="data-group">
-        <span class="data-label">TIEMPO VIAJE SONDA ESPACIAL:</span>
+        <span class="data-label">VIAJE DE SONDA:</span>
         <span class="data-value" id="data-probe">9.0 días</span>
       </div>
       <div class="data-group mt-auto">
         <span class="data-label">ESTADO DEL ANÁLISIS:</span>
-        <span class="data-value text-cyan" id="data-status">Buscando firmas térmicas...</span>
+        <span class="data-value text-cyan" id="data-status">Órbita estable. Anomalías: 0.</span>
       </div>
     </div>
   </div>
-</div>
-
-<h2 class="section-title">Registros del Horizonte</h2>
-
-<div class="grid-container" id="post-grid">
-  {% for post in site.posts %}
-    <div class="card post-card {{ post.categories | join: ' ' }}">
-      {% if post.image %}
-        <img src="{{ post.image }}" alt="{{ post.title }}" class="card-img">
-      {% endif %}
-      <div class="card-content">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al Registro →</a>
-      </div>
-    </div>
-  {% endfor %}
 </div>
 
 <footer class="custom-footer">
@@ -93,7 +95,7 @@ layout: default
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 1. Lógica del Filtro de Artículos Superior
+    // 1. Lógica del Filtro de Artículos
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.post-card');
     filterBtns.forEach(btn => {
@@ -108,7 +110,7 @@ layout: default
       });
     });
 
-    // 2. Base de Datos del Radar Cósmico (Distancias en km)
+    // 2. Base de Datos del Radar Cósmico
     const astroData = {
       luna: { name: "LUNA", dist: 384400, status: "Órbita estable. Anomalías: 0." },
       sol: { name: "SOL", dist: 149600000, status: "Actividad solar moderada." },
@@ -117,8 +119,8 @@ layout: default
       jupiter: { name: "JÚPITER", dist: 628700000, status: "Fuerte radiación magnética." }
     };
 
-    const speedOfLight = 299792; // km/s
-    const probeSpeed = 60000; // km/h (Velocidad aprox de la sonda Voyager)
+    const speedOfLight = 299792; 
+    const probeSpeed = 60000; 
 
     const targetBtns = document.querySelectorAll('.target-btn');
     const dName = document.getElementById('data-name');
@@ -129,11 +131,9 @@ layout: default
 
     targetBtns.forEach(btn => {
       btn.addEventListener('click', function() {
-        // Estilos de botones
         targetBtns.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
 
-        // Calcular telemetría
         const key = this.getAttribute('data-target');
         const data = astroData[key];
         
@@ -144,7 +144,6 @@ layout: default
         let probeText = probeHours < 24 ? `${probeHours.toFixed(1)} horas` : `${(probeHours/24).toFixed(1)} días`;
         if ((probeHours/24) > 365) probeText = `${(probeHours/24/365).toFixed(2)} años`;
 
-        // Actualizar UI con efecto visual rápido
         dName.textContent = data.name;
         dDist.textContent = data.dist.toLocaleString('es-ES') + " km";
         dLight.textContent = lightText;
