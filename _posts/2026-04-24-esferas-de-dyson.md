@@ -3,6 +3,7 @@ layout: default
 title: "Esferas de Dyson: ¿Podemos atrapar la energía de una estrella?"
 date: 2026-04-24
 categories: astrofisica
+image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800&auto=format&fit=crop"
 ---
 
 # Esferas de Dyson: ¿Podemos atrapar la energía de una estrella?
@@ -19,7 +20,7 @@ Dyson argumentó que a medida que una civilización avanza tecnológicamente, su
 
 Para entender la magnitud de esta megaestructura, los astrofísicos utilizan la Escala de Kardashev, que clasifica a las civilizaciones según su consumo de energía:
 
-* **Tipo I:** Domina toda la energía de su planeta (Nosotros estamos cerca de un 0.73).
+* **Tipo I:** Domina toda la energía de su planeta.
 * **Tipo II:** Domina toda la energía de su estrella. (Aquí es donde se requiere una Esfera de Dyson).
 * **Tipo III:** Domina la energía de toda su galaxia.
 
