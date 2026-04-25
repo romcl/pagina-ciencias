@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Esferas de Dyson: ¿Podemos atrapar la energía de una estrella?"
 date: 2026-04-24
 categories: astrofisica
@@ -13,6 +13,8 @@ Cuando miramos al cielo nocturno, vemos puntos de luz que representan reactores 
 ## ¿Qué es exactamente?
 
 Propuesta por el físico teórico Freeman Dyson en 1960, una Esfera de Dyson no es una bola sólida de metal, sino un enjambre de satélites, paneles solares o hábitats espaciales que orbitan alrededor de una estrella, envolviéndola por completo para recolectar su energía. 
+
+![Concepto de Enjambre Dyson](https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop)
 
 Dyson argumentó que a medida que una civilización avanza tecnológicamente, su demanda de energía crece de forma exponencial. Tarde o temprano, los recursos del planeta natal se agotan, y la única fuente de energía viable y lo suficientemente grande es la estrella de su propio sistema solar.
 
