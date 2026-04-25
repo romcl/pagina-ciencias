@@ -3,6 +3,7 @@ layout: default
 title: "Plutonio: Entre la destrucción y la exploración interestelar"
 date: 2026-04-24
 categories: energia
+image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop"
 ---
 
 # Plutonio: Entre la destrucción y la exploración interestelar
