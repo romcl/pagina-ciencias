@@ -9,22 +9,28 @@ layout: default
   <a href="#energia" class="filter-btn" data-filter="energia">Energía</a>
 </nav>
 
-<div class="telemetry-panel">
-  <div class="stat-box">
-    <span class="stat-number">0{{ site.posts.size }}</span>
-    <span class="stat-label">Archivos Desclasificados</span>
+<div class="monitor-section">
+  <div class="monitor-header">
+    <span class="pulse"></span> SISTEMA DE MONITOREO ATMOSFÉRICO ACTIVO
   </div>
-  <div class="stat-box">
-    <span class="stat-number">100%</span>
-    <span class="stat-label">Eficiencia Teórica</span>
-  </div>
-  <div class="stat-box">
-    <span class="stat-number">∞</span>
-    <span class="stat-label">Frontera Cósmica</span>
+  
+  <div class="telemetry-panel">
+    <div class="stat-box">
+      <span class="stat-label">UBICACIÓN BASE</span>
+      <span class="stat-value">CALDERA, ATACAMA</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">ESTADO DEL CIELO</span>
+      <span class="stat-value">DESPEJADO / ÓPTIMO</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">RADIACIÓN SOLAR</span>
+      <span class="stat-value">ALTA (UV 11+)</span>
+    </div>
   </div>
 </div>
 
-# Base de Datos Activa
+<h2 class="section-title">Bitácora de Investigaciones</h2>
 
 <div class="grid-container" id="post-grid">
   {% for post in site.posts %}
@@ -35,7 +41,7 @@ layout: default
       <div class="card-content">
         <h3>{{ post.title }}</h3>
         <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al registro →</a>
+        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al Registro →</a>
       </div>
     </div>
   {% endfor %}
@@ -65,19 +71,3 @@ layout: default
     });
   });
 </script>
-<footer class="custom-footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <h3>EXPLORACIÓN Y CIENCIA</h3>
-      <p>Divulgación científica desde Caldera, Región de Atacama.</p>
-    </div>
-    <div class="footer-social">
-      <a href="https://instagram.com/jamsroam" target="_blank" class="social-link">Instagram</a>
-      <a href="https://youtube.com/" target="_blank" class="social-link">YouTube</a>
-      <a href="https://tiktok.com/" target="_blank" class="social-link">TikTok</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Raúl Araya Morales. Todos los derechos reservados. Transmisión segura.</p>
-  </div>
-</footer>
