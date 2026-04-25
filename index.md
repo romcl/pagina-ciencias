@@ -75,7 +75,7 @@ layout: default
   <div class="footer-content">
     <div class="footer-logo">
       <h3>EXPLORACIÓN Y CIENCIA</h3>
-      <p>Divulgación científica desde Caldera, Región de Atacama.</p>
+      <p>Divulgación científica desde Chile.</p>
     </div>
     <div class="footer-social">
       <a href="https://instagram.com/" target="_blank" class="social-link">Instagram</a>
