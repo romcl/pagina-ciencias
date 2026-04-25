@@ -14,7 +14,7 @@ Imagina un reloj que hace tictac para siempre, sin batería, sin cuerda y sin pe
 
 Para entenderlos, primero veamos un cristal común, como un diamante o un grano de sal. Sus átomos están organizados en un patrón estructurado que se repite a lo largo del **espacio**. Esta organización es estática.
 
-![Estructura Atómica](https://images.unsplash.com/photo-1501166073351-204c35df2bd2?q=80&w=800&auto=format&fit=crop)
+![Estructura Atómica](https://cdn.discordapp.com/attachments/1479004312893132810/1497397406105473035/image.png?ex=69ed5f81&is=69ec0e01&hm=19baca391d11f5a0db623800ea8ac3e99c2c15a72109fff7e2b5ffcb95e13926&)
 
 Los cristales de tiempo llevan esta idea a la cuarta dimensión: el **tiempo**. Sus átomos no solo tienen un patrón físico, sino que también se mueven y cambian en un patrón que se repite rítmicamente. Oscilan constantemente de un estado a otro, sin detenerse jamás, incluso en su estado de energía más bajo.
 
