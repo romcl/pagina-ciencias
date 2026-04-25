@@ -11,7 +11,7 @@ layout: default
 
 <div class="terminal-wrapper">
   <div class="terminal-header">
-    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: CALDERA, ATACAMA)
+    <span class="pulse"></span> SISTEMA DE ESCANEO DE PROFUNDIDAD (ORIGEN: PLANETA TIERRA)
   </div>
   
   <div class="radar-layout">
