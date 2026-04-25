@@ -9,7 +9,22 @@ layout: default
   <a href="#energia" class="filter-btn" data-filter="energia">Energía</a>
 </nav>
 
-# Bienvenidos al Cosmos
+<div class="telemetry-panel">
+  <div class="stat-box">
+    <span class="stat-number">0{{ site.posts.size }}</span>
+    <span class="stat-label">Archivos Desclasificados</span>
+  </div>
+  <div class="stat-box">
+    <span class="stat-number">100%</span>
+    <span class="stat-label">Eficiencia Teórica</span>
+  </div>
+  <div class="stat-box">
+    <span class="stat-number">∞</span>
+    <span class="stat-label">Frontera Cósmica</span>
+  </div>
+</div>
+
+# Base de Datos Activa
 
 <div class="grid-container" id="post-grid">
   {% for post in site.posts %}
@@ -20,7 +35,7 @@ layout: default
       <div class="card-content">
         <h3>{{ post.title }}</h3>
         <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-        <a href="{{ post.url | relative_url }}" class="btn-leer">Leer investigación →</a>
+        <a href="{{ post.url | relative_url }}" class="btn-leer">Acceder al registro →</a>
       </div>
     </div>
   {% endfor %}
@@ -34,15 +49,11 @@ layout: default
     filterBtns.forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault(); 
-        
-        // Reiniciar el color de todos los botones
         filterBtns.forEach(b => b.style.color = '#ffffff');
-        // Pintar de cyan el botón seleccionado
         this.style.color = '#45a29e'; 
 
         const filterValue = this.getAttribute('data-filter');
 
-        // Mostrar u ocultar tarjetas según la categoría
         cards.forEach(card => {
           if (filterValue === 'all' || card.classList.contains(filterValue)) {
             card.style.display = 'flex';
